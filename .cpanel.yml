@@ -1,0 +1,26 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home1/kinustor/public_html/
+    - /bin/cp * $DEPLOYPATH
+
+
+# Deploy individual files
+# The following .cpanel.yml file deploys the index.html and style.css files to the example account’s public_html directory:
+
+# ---
+# deployment:
+#   tasks:
+#     - export DEPLOYPATH=/home/example/public_html/
+#     - /bin/cp index.html $DEPLOYPATH
+#     - /bin/cp style.css $DEPLOYPATH
+
+
+# Deploy an entire directory
+# The following .cpanel.yml file copies the images directory and all of its contents to the example account’s public_html directory:
+
+# ---
+# deployment:
+#   tasks:
+#     - export DEPLOYPATH=/home/example/public_html/
+#     - /bin/cp -R images $DEPLOYPATH
