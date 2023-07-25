@@ -2,7 +2,7 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home1/kinustor/public_html/
-    - /bin/cp dist/* $DEPLOYPATH
+    - /bin/cp $PROJECTROOT/dist/* $DEPLOYPATH
 
 
 # Deploy individual files
