@@ -1,16 +1,32 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import CSelect from './components/CSelect'
+import { useState } from "react";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
+import "./App.css";
+import Select from "./components/Select";
+import Button from "./components/Button";
+import TopBar from "./components/TopBar";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
-    <>
-    <div>    <CSelect options={['a', 'b']} selectedValue='a' onChange={()=>{}}></CSelect>
-</div>
+    <div className="app">
+    <TopBar></TopBar>
+          <div>
+        <Button
+          text={"asdf"}
+          primary={true}
+          disabled={false}
+        ></Button>
+      </div>
+
+      <div>
+        <Select
+          options={["a", "b"]}
+          selectedValue="a"
+          onChange={() => {}}
+        ></Select>
+      </div>
       <div>
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
@@ -31,8 +47,8 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
-    </>
-  )
+    </div>
+  );
 }
 
-export default App
+export default App;

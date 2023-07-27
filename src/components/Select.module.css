@@ -29,6 +29,7 @@
     border-radius: 5px;
   }
   
+  
   .selectedValueSpan {
     width: min-content;
     flex-grow: 1;

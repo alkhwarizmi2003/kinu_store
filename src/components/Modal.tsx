@@ -4,7 +4,7 @@ type Props = {
     appCmdCallback: (command: string, data: any) => void;
   };
   
-  function CModal({ show, children, appCmdCallback }: Props) {
+  function Modal({ show, children, appCmdCallback }: Props) {
     const showHideClassName = show ? "modal display-block" : "modal display-none";
   
     function handleClose() {
@@ -28,4 +28,4 @@ type Props = {
     );
   }
   
-  export default CModal;
+  export default Modal;

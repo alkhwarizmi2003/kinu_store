@@ -1,5 +1,5 @@
 import React, { useState, FocusEvent, MouseEvent } from "react";
-import styles from "./CSelect.module.css";
+import styles from "./Select.module.css";
 
 // type SelectOption = {
 //   id: number;
@@ -12,7 +12,8 @@ type Props = {
   onChange: (value: any | undefined) => void;
 };
 
-function CSelect({ options, selectedValue, onChange }: Props) {
+function Select({ options, selectedValue, onChange }: Props) {
+  
   const [isDropDown, setIsDropDown] = useState<Boolean>(false);
   const [selValue, setSelectedValue] = useState<string>(
     "Please select a value"
@@ -67,4 +68,4 @@ function CSelect({ options, selectedValue, onChange }: Props) {
   );
 }
 
-export default CSelect;
+export default Select;
