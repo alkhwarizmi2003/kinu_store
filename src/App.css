@@ -1,6 +1,7 @@
 * {
-  margin: 0 !important;
-  padding: 0 !important;
+   margin: 0 !important;
+  padding: 0 !important; 
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
 
 #root {
@@ -11,6 +12,7 @@
 }
 
 .app{
+
   width: 100%;
 }
 
