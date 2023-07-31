@@ -8,7 +8,7 @@ type Props = {
   disabled?: boolean;
 };
 
-const Button = styled.button<{ disabled?: boolean; textAlign?: string }>`
+const StyledSelect = styled.button<{ disabled?: boolean; textAlign?: string }>`
   text-align: ${(props) => (props.textAlign ? props.textAlign : "center")};
   font-size: 16px;
   background-color: ${(props) => (props.disabled ? "#ccc" : "transparent")};
@@ -37,12 +37,12 @@ const Button = styled.button<{ disabled?: boolean; textAlign?: string }>`
   } */
 `;
 
-function TextButton({ children, onClick, disabled = false, textAlign }: Props) {
+function Select2({ children, onClick, disabled = false, textAlign }: Props) {
   return (
-    <Button onClick={onClick} disabled={disabled} textAlign={textAlign}>
+    <StyledSelect onClick={onClick} disabled={disabled} textAlign={textAlign}>
       {children}{" "}
-    </Button>
+    </StyledSelect>
   );
 }
 
-export default TextButton;
+export default Select2;

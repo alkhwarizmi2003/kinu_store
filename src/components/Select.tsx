@@ -13,7 +13,6 @@ type Props = {
 };
 
 function Select({ options, selectedValue, onChange }: Props) {
-  
   const [isDropDown, setIsDropDown] = useState<Boolean>(false);
   const [selValue, setSelectedValue] = useState<string>(
     "Please select a value"
@@ -58,7 +57,11 @@ function Select({ options, selectedValue, onChange }: Props) {
           }`}
         >
           {options.map((option) => (
-            <li className={styles.option} onClick={() => optionOnClick(option)} key={option.value}>
+            <li
+              className={styles.option}
+              onClick={() => optionOnClick(option)}
+              key={option.value}
+            >
               {option.toString()}
             </li>
           ))}
