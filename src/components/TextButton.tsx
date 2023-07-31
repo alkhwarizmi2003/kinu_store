@@ -23,17 +23,10 @@ const Button = styled.button<{ disabled?: boolean; textAlign?: string }>`
   border: solid 1px transparent;
   &:hover {
     border: solid 1px white;
-    /* background-color: ${(props) =>
-      props.primary ? "#55bd90" : "#6bedb5"}; */
   }
   /* &:active {
-    border: solid 2px #1b116e;
-    padding: ${(props) =>
-    props.size === "small"
-      ? "5px 23px 6px"
-      : props.size === "medium"
-      ? "7px 28px 9px"
-      : "12px 28px 14px"};
+    border: solid 2px #1b116e; 
+    padding: ${(props) => props.size === "small" ? "5px 23px 6px" : props.size === "medium" ? "7px 28px 9px" : "12px 28px 14px"};
   } */
 `;
 
