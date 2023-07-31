@@ -7,7 +7,7 @@ type Props = {
   disabled?: boolean;
   size?: "small" | "medium" | "large";
   onClick?: MouseEventHandler<HTMLButtonElement>;
-}
+};
 
 const StyledButton = styled.button<Props>`
   border: 0;

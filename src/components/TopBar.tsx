@@ -70,11 +70,9 @@ function TopBar({}: Props) {
       {"alsdk jfdsf"}
 
       <TextButton
-        text="Click me"
         onClick={() => {
           console.log("Button clicked!");
-        }}
-      />
+        } } children={undefined}      />
 
       <TextButton onClick={handleButtonClick}>Click me</TextButton>
 
