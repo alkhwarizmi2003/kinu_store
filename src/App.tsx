@@ -11,15 +11,13 @@ import Select0 from "./components/Select0";
 function App() {
   const [count, setCount] = useState(0);
 
-
-
   const options = [
-    {id : 0, value: "Karachi"},
-    {id : 1, value: "Lahore"},
-    {id : 2, value: "Islamabad"},
-    {id : 3, value: "Gujrat"},
-    {id : 4, value: "Peshawar"},
-    {id : 5, value: "Multan"},
+    { id: 0, value: "Karachi" },
+    { id: 1, value: "Lahore" },
+    { id: 2, value: "Islamabad" },
+    { id: 3, value: "Gujrat" },
+    { id: 4, value: "Peshawar" },
+    { id: 5, value: "Multan" },
   ];
 
   return (
@@ -30,8 +28,12 @@ function App() {
         <Button text={"asdf"} primary={true} disabled={false}></Button>
       </div>
 
-      <Select0 options={options}/>
+      <div style={{ padding: "40px 0px" }}>
+        <Select0 options={options} />
+      </div>
+      <br />
 
+      <br />
       <div>
         <Select
           options={["a", "b"]}
@@ -39,6 +41,31 @@ function App() {
           onChange={() => {}}
         ></Select>
       </div>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
       {/* <div>
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />

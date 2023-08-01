@@ -6,8 +6,9 @@ type Props = {
 };
 
 const Header = styled.div`
+  height: 100%;
   position: relative;
-  margin: 50px 100px 0px 100px !important;
+  margin: 0px 0px 0px 0px !important;
   border: solid 1px grey;
   border-radius: 2px;
   &:hover {
@@ -24,6 +25,8 @@ const Options = styled.div<{ isOptionsVisible: Boolean }>`
   border: solid 1px red;
   border-radius: 2px;
   position: absolute;
+  translate: 0px 0px;
+  offset-position: 30px;
   list-style: none;
   overflow: hidden;
   box-sizing: border-box;
@@ -59,9 +62,16 @@ function Select0({ options }: Props) {
   };
 
   return (
-    <div tabIndex={0}>
-      <Header onBlur={dropDownOnBlur} onClick={dropDownOnClick}>{"DD Header {text}"}</Header>
-      <Options isOptionsVisible={isDropDown} onBlur={dropDownOnBlur}>
+    <div >
+      <Header 
+      tabIndex={0}
+      onBlur={dropDownOnBlur} onClick={dropDownOnClick}>
+        {"DD Header {text}"}
+      </Header>
+      <Options
+        isOptionsVisible={isDropDown}
+        onBlur={dropDownOnBlur}
+      >
         {options.map((option) => (
           <li key={option.value}>{option.value}</li>
         ))}

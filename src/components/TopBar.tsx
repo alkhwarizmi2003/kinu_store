@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import TextButton from "./TextButton";
-import {BsCaretDownFill} from "react-icons/bs";
+import { BsCaretDownFill } from "react-icons/bs";
+import Select0 from "./Select0";
 
 // #FF9900
 
@@ -60,9 +61,14 @@ const searchBoxRightButton = {
   height: "60px",
 };
 
-
-
-
+const options = [
+  { id: 0, value: "Karachi" },
+  { id: 1, value: "Lahore" },
+  { id: 2, value: "Islamabad" },
+  { id: 3, value: "Gujrat" },
+  { id: 4, value: "Peshawar" },
+  { id: 5, value: "Multan" },
+];
 
 function TopBar({}: Props) {
   return (
@@ -72,38 +78,41 @@ function TopBar({}: Props) {
       <TextButton
         onClick={() => {
           console.log("Button clicked!");
-        } } children={undefined}      />
+        }}
+        children={undefined}
+      />
 
       <TextButton onClick={handleButtonClick}>Click me</TextButton>
-
+      {/* 
       <TextButton onClick={handleButtonClick} textAlign="left">
         Deliver to
         <br /> <strong>Pakistan</strong>
-      </TextButton>
+      </TextButton> 
 
       <TextButton onClick={handleButtonClick} textAlign="left">
         <strong>EN</strong>
       </TextButton>
       <div style={searchBoxStyle}>
-
-<div style={searchBoxLeftMenu}> 
-<BsCaretDownFill color="white" size="10px"/>
-</div>
-<div style={searchBoxTextBox}> </div>
-<div style={searchBoxRightButton}> </div>
-
+        <div style={searchBoxLeftMenu}>
+          <BsCaretDownFill color="white" size="10px" />
+        </div>
+        <div style={searchBoxTextBox}> </div>
+        <div style={searchBoxRightButton}> </div>
       </div>
+      
       <TextButton onClick={handleButtonClick} disabled>
         <span>Disabled Button</span>
       </TextButton>
 
       <TextButton onClick={handleButtonClick}>
-
         <img src="button-icon.png" alt="Button Icon" />
         <span>Button with Icon</span>
-
-
       </TextButton>
+*/}
+
+<div style={{ padding: "0px 0px" }}>
+        <Select0 options={options} />
+      </div>
 
       <TextButton onClick={handleButtonClick} textAlign="left">
         Hi, Sher Ali
