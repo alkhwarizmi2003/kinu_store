@@ -10,16 +10,15 @@ type Props = {
 type HeaderProps = {
   dx?: string;
   dy?: string;
+  selectedValueDx?: string;
 };
 
 const Header = styled.div<HeaderProps>`
   width: ${(props) => (props.dx ? props.dx : "100px")};
   height: ${(props) => (props.dy ? props.dy : "20px")};
   position: relative;
-  display: flex;
-  overflow: hidden;
-  text-overflow: ellipsis;
-
+  display: grid;
+  grid-template-columns: ${(props) => (props.selectedValueDx ? props.selectedValueDx : "2fr")} 40px;
   margin: 0px 0px 0px 0px !important;
   background-color: white;
   border: solid 1px grey;
@@ -33,10 +32,12 @@ const Header = styled.div<HeaderProps>`
 `;
 
 const Button = styled.div`
+grid-column: 2;
   height: 100%;
   width: 40px;
   position: relative;
   display: inline-block;
+  /* float: right; */
   right: 0px;
   margin: 0px 0px 0px 0px !important;
   border: solid 1px grey;
@@ -97,9 +98,9 @@ const Options = styled.div<OptionsProps>`
   }
 `;
 
-function Select0({ options, headerHeight }: Props) {
+function Select0({ options, headerHeight, headerWidth }: Props) {
   const [isDropDown, setIsDropDown] = useState<Boolean>(false);
-  const [selectedValue, setSelectedValue] = useState<string>("Plea");
+  const [selectedValue, setSelectedValue] = useState<string>("Please select a value");
   const dropDownOnClick = () => {
     console.log("drop down on Click .............");
     setIsDropDown((d) => !d);
@@ -117,8 +118,9 @@ function Select0({ options, headerHeight }: Props) {
         onBlur={dropDownOnBlur}
         onClick={dropDownOnClick}
         dy={headerHeight}
+        dx={headerWidth}
       >
-        <div style={{textAlign:"start", textOverflow: "ellipsis", whiteSpace: "nowrap", overflow:"hidden"}}>
+        <div style={{gridColumn:"1", textAlign:"start", textOverflow: "ellipsis", whiteSpace: "nowrap", overflow:"hidden", display:"block"}}>
 
         {selectedValue}
         </div>

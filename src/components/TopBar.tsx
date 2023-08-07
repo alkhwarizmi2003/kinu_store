@@ -76,8 +76,9 @@ function TopBar({}: Props) {
       <Select0 options={options} />
 
       <div style={{ display: "flex", height: "45px", border: "solid 2px red" }}>
-        <Select0 options={options} headerHeight={"200px"} />
+        <Select0 options={options} headerWidth={"190px"} />
       </div>
+      <Select0 options={options} headerWidth={"300px"} />
 
       {/* <TextButton
         onClick={() => {
