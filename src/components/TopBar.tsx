@@ -73,9 +73,13 @@ const options = [
 function TopBar({}: Props) {
   return (
     <StyledTopBar>
-      {"alsdk jfdsf"}
+      <Select0 options={options} />
 
-      <TextButton
+      <div style={{ display: "flex", height: "45px", border: "solid 2px red" }}>
+        <Select0 options={options} headerHeight={"200px"} />
+      </div>
+
+      {/* <TextButton
         onClick={() => {
           console.log("Button clicked!");
         }}
@@ -83,7 +87,7 @@ function TopBar({}: Props) {
       />
 
       <TextButton onClick={handleButtonClick}>Click me</TextButton>
-      {/* 
+       
       <TextButton onClick={handleButtonClick} textAlign="left">
         Deliver to
         <br /> <strong>Pakistan</strong>
@@ -108,21 +112,17 @@ function TopBar({}: Props) {
         <img src="button-icon.png" alt="Button Icon" />
         <span>Button with Icon</span>
       </TextButton>
-*/}
 
-<div style={{ padding: "0px 0px" }}>
-        <Select0 options={options} />
-      </div>
 
       <TextButton onClick={handleButtonClick} textAlign="left">
         Hi, Sher Ali
         <br /> <strong>Account & Lists</strong>
-      </TextButton>
+      </TextButton> 
 
-      <TextButton onClick={handleButtonClick} textAlign="left">
+       <TextButton onClick={handleButtonClick} textAlign="left">
         Returns
         <br /> <strong>& Orders</strong>
-      </TextButton>
+      </TextButton> */}
     </StyledTopBar>
   );
 }

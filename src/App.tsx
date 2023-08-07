@@ -28,7 +28,10 @@ function App() {
         <Button text={"asdf"} primary={true} disabled={false}></Button>
       </div>
 
-      <div style={{ padding: "40px 0px" }}>
+      <Select0 options={options} />
+
+      <div style={{ padding: "410px 220px" }}>
+
         <Select0 options={options} />
       </div>
       <br />

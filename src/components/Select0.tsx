@@ -3,11 +3,41 @@ import styled from "styled-components";
 
 type Props = {
   options: { id: number; value: string }[];
+  headerHeight?: string;
+  headerWidth?: string;
 };
 
-const Header = styled.div`
-  height: 100%;
+type HeaderProps = {
+  dx?: string;
+  dy?: string;
+};
+
+const Header = styled.div<HeaderProps>`
+  width: ${(props) => (props.dx ? props.dx : "100px")};
+  height: ${(props) => (props.dy ? props.dy : "20px")};
   position: relative;
+  display: flex;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  margin: 0px 0px 0px 0px !important;
+  background-color: white;
+  border: solid 1px grey;
+  border-radius: 2px;
+  &:hover {
+    border: solid 1px black;
+  }
+  &:active {
+    border: solid 1px #ff9900;
+  }
+`;
+
+const Button = styled.div`
+  height: 100%;
+  width: 40px;
+  position: relative;
+  display: inline-block;
+  right: 0px;
   margin: 0px 0px 0px 0px !important;
   border: solid 1px grey;
   border-radius: 2px;
@@ -19,9 +49,29 @@ const Header = styled.div`
   }
 `;
 
-const Options = styled.div<{ isOptionsVisible: Boolean }>`
-  height: 100px;
-  width: fit-content;
+const Caret = styled.div`
+  height: 0px;
+  width: 0px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border: 0.25em solid transparent;
+  border-top-color: #777;
+  /* margin-left: 5px; */
+  /* margin-right: 5px; */
+  translate: -50% -50%;
+`;
+
+type OptionsProps = {
+  dx?: string;
+  dy?: string;
+  isOptionsVisible: Boolean;
+};
+
+const Options = styled.div<OptionsProps>`
+  width: ${(props) => (props.dx ? props.dx : "fit-content")};
+  height: ${(props) => (props.dy ? props.dy : "fit-content")};
+  background-color: white;
   border: solid 1px red;
   border-radius: 2px;
   position: absolute;
@@ -36,7 +86,8 @@ const Options = styled.div<{ isOptionsVisible: Boolean }>`
   max-height: ${(props) => (props.isOptionsVisible ? "200px" : "0px")};
   transition: ${(props) =>
     props.isOptionsVisible ? "300ms ease-out" : "250ms ease-out"};
-  border-color: ${(props) => (props.isOptionsVisible ? "red" : "transparent")};
+  border-color: ${(props) =>
+    props.isOptionsVisible ? "white" : "transparent"};
 
   &:hover {
     border: solid 1px black;
@@ -46,11 +97,9 @@ const Options = styled.div<{ isOptionsVisible: Boolean }>`
   }
 `;
 
-function Select0({ options }: Props) {
+function Select0({ options, headerHeight }: Props) {
   const [isDropDown, setIsDropDown] = useState<Boolean>(false);
-  const [selValue, setSelectedValue] = useState<string>(
-    "Please select a value"
-  );
+  const [selectedValue, setSelectedValue] = useState<string>("Plea");
   const dropDownOnClick = () => {
     console.log("drop down on Click .............");
     setIsDropDown((d) => !d);
@@ -58,22 +107,30 @@ function Select0({ options }: Props) {
 
   const dropDownOnBlur = (e: FocusEvent<HTMLInputElement>) => {
     console.log("drop down on blurrrrrrrrrr.............");
-    setIsDropDown((d) => !d);
+    setIsDropDown(false);
   };
 
   return (
-    <div >
-      <Header 
-      tabIndex={0}
-      onBlur={dropDownOnBlur} onClick={dropDownOnClick}>
-        {"DD Header {text}"}
-      </Header>
-      <Options
-        isOptionsVisible={isDropDown}
+    <div>
+      <Header
+        tabIndex={0}
         onBlur={dropDownOnBlur}
+        onClick={dropDownOnClick}
+        dy={headerHeight}
       >
+        <div style={{textAlign:"start", textOverflow: "ellipsis", whiteSpace: "nowrap", overflow:"hidden"}}>
+
+        {selectedValue}
+        </div>
+        <Button>
+          <Caret />
+        </Button>
+      </Header>
+      <Options isOptionsVisible={isDropDown} onBlur={dropDownOnBlur} dx="150px">
         {options.map((option) => (
-          <li key={option.value}>{option.value}</li>
+          <li style={{ textAlign: "start" }} key={option.value}>
+            {option.value}
+          </li>
         ))}
       </Options>
     </div>
