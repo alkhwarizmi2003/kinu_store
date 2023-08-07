@@ -69,7 +69,7 @@ type OptionsProps = {
   isOptionsVisible: Boolean;
 };
 
-const Options = styled.div<OptionsProps>`
+const OptionsContainer = styled.div<OptionsProps>`
   width: ${(props) => (props.dx ? props.dx : "fit-content")};
   height: ${(props) => (props.dy ? props.dy : "fit-content")};
   background-color: white;
@@ -97,6 +97,7 @@ const Options = styled.div<OptionsProps>`
     border: solid 1px #ff9900;
   }
 `;
+
 
 function Select0({ options, headerHeight, headerWidth }: Props) {
   const [isDropDown, setIsDropDown] = useState<Boolean>(false);
@@ -128,13 +129,13 @@ function Select0({ options, headerHeight, headerWidth }: Props) {
           <Caret />
         </Button>
       </Header>
-      <Options isOptionsVisible={isDropDown} onBlur={dropDownOnBlur} dx="150px">
+      <OptionsContainer isOptionsVisible={isDropDown} onBlur={dropDownOnBlur} dx="150px">
         {options.map((option) => (
           <li style={{ textAlign: "start" }} key={option.value}>
             {option.value}
           </li>
         ))}
-      </Options>
+      </OptionsContainer>
     </div>
   );
 }
