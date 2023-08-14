@@ -41,6 +41,10 @@ const StyledButton = styled.button<Props>`
   }
 `;
 
+
+/**
+ * A simple button component asdf sadf asdf.
+ */
 // : React.FC<ButtonProps> = 
 function Button({
   size,

@@ -1,3 +1,4 @@
+import * as React from "react";
 import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
@@ -7,6 +8,7 @@ import Button from "./components/Button";
 import TopBar from "./components/TopBar";
 import TopMenuBar from "./components/TopMenuBar";
 import Select0 from "./components/Select0";
+import SelectTest from "./components/SelectTest";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -22,6 +24,7 @@ function App() {
 
   return (
     <div className="app">
+
       <TopBar></TopBar>
       <TopMenuBar></TopMenuBar>
       <div>
@@ -39,12 +42,13 @@ function App() {
       <br />
       <div>
         <Select
-          options={["a", "b"]}
+          options={options}
           selectedValue="a"
           onChange={() => {}}
         ></Select>
       </div>
       <br />
+      <Select0 options={options} />
       <br />
       <br />
       <br />

@@ -32,7 +32,8 @@ function Select({ options, selectedValue, onChange }: Props) {
 
   const optionOnClick = (option: any) => {
     setSelectedValue(option.toString());
-    onChange(option);
+    console.log(`-------->> Select -> optionOnClick() -> ${option.toString()}`);
+    // onChange(option);
   };
 
   return (
@@ -59,10 +60,10 @@ function Select({ options, selectedValue, onChange }: Props) {
           {options.map((option) => (
             <li
               className={styles.option}
-              onClick={() => optionOnClick(option)}
+              onClick={() => optionOnClick(option.value)}
               key={option.value}
             >
-              {option.toString()}
+              {option.value}
             </li>
           ))}
         </div>
